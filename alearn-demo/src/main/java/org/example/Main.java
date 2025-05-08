@@ -1,7 +1,7 @@
-package org.springframework;
+package org.example;
 
-import org.springframework.anno.ConfigBean;
-import org.springframework.anno.ConfigBean2;
+import org.example.anno.ConfigBean;
+import org.example.anno.ConfigBean2;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Arrays;

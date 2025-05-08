@@ -528,6 +528,19 @@ class ConfigurationClassParser {
 	 * @param visited used to track visited classes to prevent infinite recursion
 	 * @throws IOException if there is any problem reading metadata from the named class
 	 */
+	/**
+	 * Recursively collect all declared {@code @Import} values. Unlike most
+	 * meta-annotations it is valid to have several {@code @Import}s declared with
+	 * different values; the usual process of returning values from the first
+	 * meta-annotation on a class is not sufficient.
+	 * <p>For example, it is common for a {@code @Configuration} class to declare direct
+	 * {@code @Import}s in addition to meta-imports originating from an {@code @Enable}
+	 * annotation.
+	 * @param sourceClass the class to search
+	 * @param imports the imports collected so far
+	 * @param visited used to track visited classes to prevent infinite recursion
+	 * @throws IOException if there is any problem reading metadata from the named class
+	 */
 	private void collectImports(SourceClass sourceClass, Set<SourceClass> imports, Set<SourceClass> visited)
 			throws IOException {
 

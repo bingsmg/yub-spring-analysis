@@ -1,4 +1,4 @@
-package org.springframework.anno;
+package org.example.anno;
 
 /**
  * @author weibb
